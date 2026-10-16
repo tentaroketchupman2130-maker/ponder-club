@@ -1,0 +1,3253 @@
+/* ==========================================================================
+   PONDER CLUB | OVER THINKERS PONDER CLUB
+   Official Concept Store & Product Archive
+   Tokyo Graphic Design & Avant-garde Stationery
+   ========================================================================== */
+
+@font-face {
+  font-family: 'ChuGothicBBB';
+  src: url('../assets/fonts/A-OTF-GothicBBBPr6-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChuGothicBBB';
+  src: url('../assets/fonts/A-OTF-GothicBBBPr6-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChuGothicBBB';
+  src: url('../assets/fonts/A-OTF-GothicBBBPr6-Medium.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChuGothicBBB';
+  src: url('../assets/fonts/A-OTF-GothicBBBPr6-Medium.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Inter:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-primary: #F8F7F4;
+  --bg-secondary: #EFECE6;
+  --bg-surface: #FFFFFF;
+  --bg-dark: #121212;
+  --bg-dark-surface: #1E1E1E;
+  
+  --text-primary: #141414;
+  --text-secondary: #585854;
+  --text-muted: #8E8D88;
+  --text-ghost: rgba(20, 20, 20, 0.07);
+  --text-ghost-strong: rgba(20, 20, 20, 0.12);
+  
+  /* Brand Accents */
+  --accent-green: #5BB52F;       /* From attachment p1 right green banner */
+  --accent-green-hover: #4ea326;
+  --accent-orange: #FF5511;      /* From attachment p4 think layer core & p1 ribbons */
+  --accent-orange-hover: #e54607;
+  --accent-sand: #DFD8C8;
+
+  --border-subtle: rgba(20, 20, 20, 0.12);
+  --border-dark: #141414;
+  
+  /* Typography - Authentic Morisawa Chu Gothic BBB Stack */
+  --font-morisawa: 'ChuGothicBBB', "A-OTF 中ゴシックBBB Pr6", "A-OTF-GothicBBBPr6-Medium", "A-OTF 中ゴシックBBB Pro", "中ゴシックBBB", "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-display: var(--font-morisawa);
+  --font-body: var(--font-morisawa);
+  --font-japanese: var(--font-morisawa);
+  --font-serif: var(--font-morisawa);
+  --font-mono: 'Space Mono', var(--font-morisawa);
+
+  /* Spacing & Transitions */
+  --space-unit: 8px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.12);
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Brand Custom Cursor */
+  --cursor-custom: url('../assets/images/custom_cursor.png') 3 0, url('../assets/images/custom_cursor.svg') 3 0, auto;
+  --cursor-pointer: url('../assets/images/custom_cursor.png') 3 0, url('../assets/images/custom_cursor.svg') 3 0, pointer;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: var(--cursor-custom);
+}
+
+body {
+  font-family: var(--font-body);
+  font-feature-settings: "palt" 1;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+  cursor: var(--cursor-custom);
+}
+
+a, button, [role="button"], [onclick], input[type="submit"], input[type="button"],
+.slider-nav-btn, .slider-thumb, .toc-link, .concept-item-list li, .footer-nav-list a,
+.nav-links a, .interactive-toggle, .cart-counter, .buy-btn, .modal-close, .hero-green-block {
+  cursor: var(--cursor-pointer);
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+}
+
+/* Grid Paper Background Texture (Removed per user request) */
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: var(--cursor-pointer);
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(248, 247, 244, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.logo-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.logo-subtitle {
+  font-family: var(--font-japanese);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-item a {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition-fast);
+}
+
+.nav-item a:hover {
+  color: var(--text-primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+
+.cart-btn {
+  position: relative;
+  padding: 8px 16px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.cart-btn:hover {
+  transform: translateY(-1px);
+  background: var(--accent-orange);
+  color: #FFF;
+}
+
+.cart-count-badge {
+  background: var(--accent-orange);
+  color: #FFF;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn:hover .cart-count-badge {
+  background: #FFF;
+  color: var(--accent-orange);
+}
+
+/* ==========================================================================
+   Section 1: Hero Exhibition Layout (Directly Recreating User Reference)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  padding: 95px 0 60px 0;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-gap: 40px;
+  position: relative;
+}
+
+/* Left Column: Typography Stack */
+.hero-typography-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-header-titles {
+  position: relative;
+  z-index: 35;
+  margin-bottom: 20px;
+}
+
+.title-ponder-club {
+  position: relative;
+  z-index: 36;
+  line-height: 1;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.title-over-thinkers {
+  font-family: var(--font-morisawa);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-left: clamp(20px, 4vw, 50px);
+}
+
+.title-over-thinkers > .k-line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Middle Lockup: Kanji & Manifest Items (Exact Lockup as in Reference) */
+.hero-kanji-lockup {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin: 12px 0 24px 0;
+  padding-left: 36px;
+}
+
+/* Accent Vector Graphic above クラブ (Separate Vertical and Horizontal Bars) */
+.hero-club-accent-bars {
+  position: absolute;
+  left: -48px;
+  top: 14px;
+  width: clamp(64px, 8vw, 92px);
+  height: clamp(38px, 4.8vw, 55px);
+  pointer-events: none;
+  user-select: none;
+  z-index: 5;
+}
+
+.accent-bar-v {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(2.5px, 0.32vw, 3.6px);
+  height: clamp(17px, 2.2vw, 25px);
+  background-color: #141414;
+  border-radius: 0.5px;
+  animation: moveBarVertical 3.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+.accent-bar-h {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(23px, 2.9vw, 33px);
+  height: clamp(2.5px, 0.32vw, 3.6px);
+  background-color: #141414;
+  border-radius: 0.5px;
+  animation: moveBarHorizontal 4.6s cubic-bezier(0.65, 0, 0.35, 1) -2.1s infinite;
+  will-change: transform;
+}
+
+.katakana-club-vertical {
+  position: absolute;
+  left: -48px;
+  top: 95px;
+  transform: none;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.svg-katakana-club {
+  width: clamp(52px, 6.5vw, 72px);
+  height: auto;
+  display: block;
+  opacity: 0.22;
+}
+
+.kanji-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.kanji-juku-top {
+  user-select: none;
+  color: #c0b6b6;
+}
+
+.kanji-bbb-char {
+  display: block;
+  font-family: var(--font-morisawa);
+  font-size: clamp(75px, 9.5vw, 105px);
+  font-weight: 700;
+  line-height: 1;
+  color: #c0b6b6;
+  user-select: none;
+  letter-spacing: 0;
+}
+
+.kanji-juku-bottom {
+  margin-top: 0;
+  user-select: none;
+  color: #988686;
+}
+
+.svg-kanji-juku {
+  width: clamp(75px, 9.5vw, 105px);
+  height: auto;
+  display: block;
+}
+
+.kanji-juku-bottom .svg-kanji-juku {
+  color: #988686;
+  opacity: 1;
+}
+
+.kanji-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.kanji-kou {
+  margin-bottom: 8px;
+  user-select: none;
+  color: #c0b6b6;
+  position: relative;
+  z-index: 3;
+}
+
+.svg-kanji-kou {
+  width: clamp(75px, 9.5vw, 105px);
+  height: auto;
+  display: block;
+  color: #c0b6b6;
+}
+
+.concept-item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 30;
+}
+
+.concept-item-list li {
+  position: relative;
+  z-index: 31;
+  font-family: var(--font-morisawa);
+  font-size: clamp(1.8rem, 2.6vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.15;
+  white-space: nowrap;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  cursor: var(--cursor-pointer);
+}
+
+.concept-item-list li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.concept-item-list li:hover {
+  color: var(--accent-orange);
+  transform: translateX(6px);
+}
+
+/* Left Bottom Tagline (No black rule divider, matching reference) */
+.hero-footer-tagline {
+  position: relative;
+  z-index: 35;
+  margin-top: 10px;
+  padding-left: 36px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.tagline-jp {
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.svg-shikou-no-katachi {
+  height: clamp(22px, 2.6vw, 30px);
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.tagline-en {
+  font-family: var(--font-morisawa);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* Right Visual Area: Frameless Photo + Overlapping Green Block */
+.hero-visual-composition {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: clamp(95px, 8.5vw, 125px);
+  min-height: 540px;
+  z-index: 10;
+}
+
+.hero-artwork-frame {
+  position: relative;
+  width: 280px;
+  height: 373px;
+  margin-right: clamp(75px, 7.5vw, 115px);
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  z-index: 12;
+  overflow: hidden;
+  animation: toggleArtworkSize 9.6s cubic-bezier(0.2, 0.9, 0.3, 1) infinite;
+  will-change: width, height, transform;
+}
+
+.hero-artwork-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Green Bold Typography Block (Overlapping lower right of photo) */
+.hero-green-block {
+  position: absolute;
+  right: 0;
+  top: 210px;
+  width: 150px;
+  height: 380px;
+  background-color: var(--accent-green);
+  z-index: 15;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: none;
+  cursor: var(--cursor-pointer);
+  overflow: hidden;
+  animation: toggleGreenBlockSize 9.6s cubic-bezier(0.2, 0.9, 0.3, 1) infinite;
+  will-change: width, height, transform;
+  transition: background-color var(--transition-fast);
+}
+
+.hero-green-block:hover {
+  background-color: var(--accent-green-hover);
+}
+
+.blur-log-col {
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.blur-log-ticker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 240px;
+  will-change: transform;
+}
+
+.blur-log-ticker span {
+  writing-mode: vertical-rl;
+  font-family: 'ChuGothicBBB', var(--font-morisawa);
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: 0.12em;
+  color: #141414;
+  text-transform: lowercase;
+  white-space: nowrap;
+  user-select: none;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Avant-Garde Kinetic Typographic Motion (Hero Section)
+   Cohesive Word-Grouped Omni-Directional (縦横無尽) Trajectories
+   ========================================================================== */
+
+/* ==========================================================================
+   Avant-Garde Kinetic Typographic Motion (Hero Section)
+   Rich Multi-Technique Orthogonal Motion:
+   - Accordion Tracking Expansion & Odd/Even Vertical Interlock
+   - Criss-Cross Position Swapping & Horizontal Stretch
+   - Vertical Elevator Drops & Horizontal Ghost Echoes
+   - Screen-Wide Horizon Sweeps & Staggered Staircase Indents
+   ========================================================================== */
+
+/* Character & Word Foundations */
+.k-line {
+  display: block;
+}
+
+.k-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+.kc-space {
+  display: inline-block;
+  width: 0.35em;
+}
+
+.kc {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   VARIATION 1 & 2: OVER THINKERS & PONDER CLUB - Horizontal Split (水平分裂)
+   - Act 1: Central Axis Split (中央軸からの左右水平分裂)
+   - Act 2: Symmetrical Character Dispersion (文字単位の水平追従拡散)
+   - Strictly anchored to baseline (translateY: 0) with zero vertical overlap
+   -------------------------------------------------------------------------- */
+
+/* Word-Level Horizontal Split: OVER slides left */
+@keyframes splitWordOver {
+  0%, 12% {
+    transform: translateX(0);
+  }
+  28%, 74% {
+    transform: translateX(max(-7vw, -85px));
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+.word-over {
+  animation: splitWordOver 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Word-Level Horizontal Split: THINKERS slides right */
+@keyframes splitWordThinkers {
+  0%, 12% {
+    transform: translateX(0);
+  }
+  28%, 74% {
+    transform: translateX(min(11vw, 140px));
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+.word-thinkers {
+  animation: splitWordThinkers 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Character Dispersion Keyframes for Horizontal Split (水平分裂拡散) */
+@keyframes charDisperseLeft4 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-23px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseLeft3 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-16px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseLeft2 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-10px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseLeft1 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-5px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseRight1 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(5px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseRight2 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(9px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseRight3 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(15px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes charDisperseRight4 {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(22px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+/* Individual Letters in OVER (O, V, E, R) */
+.line-over-thinkers .l-1 { animation: charDisperseLeft2  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-2 { animation: charDisperseLeft1  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-3 { animation: charDisperseRight1 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-4 { animation: charDisperseRight2 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+
+/* Individual Letters in THINKERS (T, H, I, N, K, E, R, S) */
+.line-over-thinkers .l-5  { animation: charDisperseLeft4  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-6  { animation: charDisperseLeft3  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-7  { animation: charDisperseLeft2  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-8  { animation: charDisperseLeft1  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-9  { 
+  margin-right: clamp(2.5px, 0.25vw, 4px); 
+  animation: charDisperseRight1 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; 
+}
+.line-over-thinkers .l-10 { animation: charDisperseRight2 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-11 { animation: charDisperseRight3 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-over-thinkers .l-12 { animation: charDisperseRight4 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+
+/* Subline: PONDER CLUB (Split in unison, held during downward multiplication) */
+@keyframes splitWordSubPonder {
+  0%, 12% {
+    transform: translateX(0);
+  }
+  28%, 74% {
+    transform: translateX(max(-6vw, -75px));
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes splitWordSubClub {
+  0%, 12% {
+    transform: translateX(0);
+  }
+  28%, 74% {
+    transform: translateX(min(9vw, 115px));
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+.word-ponder {
+  animation: splitWordSubPonder 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.word-sub-club {
+  animation: splitWordSubClub 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Individual Letters in PONDER (P, O, N, D, E, R) */
+.line-sub-ponder-club .lp-1 { animation: charDisperseLeft3  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-2 { animation: charDisperseLeft2  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-3 { animation: charDisperseLeft1  4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-4 { animation: charDisperseRight1 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-5 { animation: charDisperseRight2 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-6 { animation: charDisperseRight3 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+
+/* Individual Letters in CLUB: Optically tuned kerning at midpoint between previous and tight state */
+@keyframes clubLetterC {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-10px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes clubLetterL {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(-2.5px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes clubLetterU {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(2.5px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+@keyframes clubLetterB {
+  0%, 12% { transform: translateX(0); }
+  28%, 74% { transform: translateX(10px); }
+  88%, 100% { transform: translateX(0); }
+}
+
+.line-sub-ponder-club .lp-7  { animation: clubLetterC 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-8  { animation: clubLetterL 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-9  { animation: clubLetterU 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.line-sub-ponder-club .lp-10 { animation: clubLetterB 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+
+/* --------------------------------------------------------------------------
+   VARIATION 2 (CONT): PONDER CLUB Downward Multiplication (下に増殖)
+   - Triggers right after the horizontal split completes (at 30%)
+   - Sequentially multiplies 3 ghost duplicate rows downwards
+   - Holds 4 stacked rows, then collapses cleanly before returning
+   -------------------------------------------------------------------------- */
+@keyframes ponderClubMultiplyDown {
+  0%, 30% {
+    text-shadow: 
+      0 0 0 transparent,
+      0 0 0 transparent,
+      0 0 0 transparent;
+  }
+  38% {
+    text-shadow: 
+      0 clamp(24px, 2.4vw, 34px) 0 #141414,
+      0 0 0 transparent,
+      0 0 0 transparent;
+  }
+  46% {
+    text-shadow: 
+      0 clamp(24px, 2.4vw, 34px) 0 #141414,
+      0 clamp(48px, 4.8vw, 68px) 0 #141414,
+      0 0 0 transparent;
+  }
+  54%, 68% {
+    text-shadow: 
+      0 clamp(24px, 2.4vw, 34px) 0 #141414,
+      0 clamp(48px, 4.8vw, 68px) 0 #141414,
+      0 clamp(72px, 7.2vw, 102px) 0 #141414;
+  }
+  74% {
+    text-shadow: 
+      0 0 0 transparent,
+      0 0 0 transparent,
+      0 0 0 transparent;
+  }
+  75%, 100% {
+    text-shadow: 
+      0 0 0 transparent,
+      0 0 0 transparent,
+      0 0 0 transparent;
+  }
+}
+
+.line-sub-ponder-club {
+  animation: ponderClubMultiplyDown 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.line-sub-ponder-club .kc {
+  text-shadow: inherit;
+}
+
+
+/* --------------------------------------------------------------------------
+   VARIATION 3: 熟考 Lockup (4 Distinct Typographic Behaviors)
+   - Top 熟: Vertical Elevator Drop (垂直エレベーター落下)
+   - Bottom 熟: Horizontal Ghost Echo & Pulse (水平ゴースト残像)
+   - 考: Screen-Wide Horizon Sweep & Step (全画面水平スウィープ＆ステップ)
+   - クラブ: 2-Tier Vertical Ruler Step (2段階ルーラーステップ)
+   -------------------------------------------------------------------------- */
+
+/* Top 熟: Vertical Elevator Drop past the bottom 熟 */
+@keyframes elevatorDropJukuTop {
+  0%, 14% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  32%, 52% {
+    transform: translateY(115px);
+    opacity: 1;
+  }
+  70%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.kanji-juku-top {
+  position: relative;
+  z-index: 1;
+  animation: elevatorDropJukuTop 3.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* Bottom 熟: Horizontal Ghost Echo to the Left */
+@keyframes ghostEchoJukuBottom {
+  0%, 12% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  28%, 50% {
+    transform: translateX(max(-12vw, -160px));
+    opacity: 0.85;
+  }
+  68%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.kanji-juku-bottom {
+  position: relative;
+  z-index: 1;
+  animation: ghostEchoJukuBottom 3.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 考: Wide Horizon Sweep Across Screen & Orthogonal Step */
+@keyframes horizonSweepKou {
+  0%, 10% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  28%, 46% {
+    transform: translateX(min(58vw, 760px)) translateY(0);
+    opacity: 0.9;
+  }
+  54%, 68% {
+    transform: translateX(min(24vw, 320px)) translateY(-45px);
+    opacity: 0.9;
+  }
+  84%, 100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+.kanji-kou {
+  position: relative;
+  z-index: 1;
+  animation: horizonSweepKou 4.0s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* クラブ Vertical Katakana: 2-Tier Ruler Step */
+@keyframes rulerStepClub {
+  0%, 12% {
+    transform: translateY(0);
+    opacity: 0.22;
+  }
+  26%, 46% {
+    transform: translateY(-70px);
+    opacity: 0.32;
+  }
+  56%, 74% {
+    transform: translateY(45px);
+    opacity: 0.26;
+  }
+  86%, 100% {
+    transform: translateY(0);
+    opacity: 0.22;
+  }
+}
+
+.katakana-club-vertical {
+  animation: rulerStepClub 4.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* Accent Bars above クラブ: Pure Orthogonal Horizontal & Vertical Kinematics (水平・垂直移動のみ) */
+
+/* 1. Vertical Bar: Pure Vertical Movement (Y-axis only) */
+@keyframes moveBarVertical {
+  0%, 14% {
+    transform: translateY(0);
+  }
+  32%, 52% {
+    transform: translateY(clamp(-115px, -12vw, -80px));
+  }
+  68%, 86% {
+    transform: translateY(clamp(60px, 7vw, 100px));
+  }
+  94%, 100% {
+    transform: translateY(0);
+  }
+}
+
+/* 2. Horizontal Bar: Pure Horizontal Movement (X-axis only) across 熟 and 考 */
+@keyframes moveBarHorizontal {
+  0%, 14% {
+    transform: translateX(0);
+  }
+  32%, 52% {
+    transform: translateX(clamp(140px, 16vw, 240px));
+  }
+  68%, 86% {
+    transform: translateX(clamp(-45px, -5vw, -30px));
+  }
+  94%, 100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   VARIATION 4: Concept Items (石メモ / 作業進捗表 / 深掘りルーズリーフ)
+   - Staggered Staircase Horizontal Indents (階段状の水平ステップウェーブ)
+   -------------------------------------------------------------------------- */
+
+@keyframes stairStepItem1 {
+  0%, 18% {
+    transform: translateX(0);
+  }
+  32%, 52% {
+    transform: translateX(30px);
+  }
+  68%, 100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes stairStepItem2 {
+  0%, 28% {
+    transform: translateX(0);
+  }
+  42%, 62% {
+    transform: translateX(50px);
+  }
+  78%, 100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes stairStepItem3 {
+  0%, 38% {
+    transform: translateX(0);
+  }
+  52%, 72% {
+    transform: translateX(70px);
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+.concept-item-list li:nth-child(1) {
+  animation: stairStepItem1 4.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+.concept-item-list li:nth-child(2) {
+  animation: stairStepItem2 4.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+.concept-item-list li:nth-child(3) {
+  animation: stairStepItem3 4.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+
+/* --------------------------------------------------------------------------
+   VARIATION 5: Taglines (思考のかたち & PONDER CLUB)
+   - Tracking Expansion Breath & Counter-Slide
+   -------------------------------------------------------------------------- */
+
+@keyframes subtleFloatTaglineJP {
+  0%, 20% {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+  40%, 65% {
+    transform: translateX(12px);
+    opacity: 1;
+  }
+  85%, 100% {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+}
+
+.tagline-jp {
+  animation: subtleFloatTaglineJP 4.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes counterSlideTaglineEN {
+  0%, 24% {
+    transform: translateX(0);
+  }
+  44%, 68% {
+    transform: translateX(min(18vw, 240px));
+  }
+  88%, 100% {
+    transform: translateX(0);
+  }
+}
+
+.tagline-en {
+  animation: counterSlideTaglineEN 4.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform;
+}
+
+/* 14. Non-text Object 1: Artwork Frame Dynamic Morphing Loop (9.6s cycle - sweeping boldly over 熟考, below PONDER CLUB) */
+@keyframes toggleArtworkSize {
+  0%, 6% {
+    width: 280px;
+    height: 373px;
+    transform: translate3d(0, 15px, 0);
+  }
+  20% {
+    /* Slender morph drifting slightly right and stretching */
+    width: 240px;
+    height: 400px;
+    transform: translate3d(20px, 20px, 0);
+  }
+  38%, 48% {
+    /* BOLD SWEEP ACROSS INTO THE 熟考 COMPOSITION */
+    width: 360px;
+    height: 335px;
+    transform: translate3d(clamp(-560px, -42vw, -320px), 30px, 0);
+  }
+  64% {
+    /* Tall plinth hovering in the center-left */
+    width: 240px;
+    height: 400px;
+    transform: translate3d(clamp(-300px, -22vw, -160px), 18px, 0);
+  }
+  80%, 86% {
+    /* Broad square format gliding back */
+    width: 310px;
+    height: 360px;
+    transform: translate3d(-15px, 25px, 0);
+  }
+  95%, 100% {
+    width: 280px;
+    height: 373px;
+    transform: translate3d(0, 15px, 0);
+  }
+}
+
+/* 15. Green Block Dynamic Size Toggle & Broad Sweeps (Always below rotating PONDER CLUB) */
+@keyframes toggleGreenBlockSize {
+  0%, 4% {
+    /* State 1: Signature Home position at lower-right of photo - subtle edge overlap */
+    width: 150px;
+    height: 380px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  14% {
+    /* State 2: Rapid horizontal glide to center-left as a wide landscape banner - photo fully clear */
+    width: 320px;
+    height: 220px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(clamp(-450px, -34vw, -280px), 10px, 0);
+  }
+  26%, 35% {
+    /* State 3: DRAMATIC SWEEP TO THE FAR LEFT - Across 熟考 text area - photo fully clear */
+    width: 300px;
+    height: 340px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(clamp(-980px, -68vw, -580px), 10px, 0);
+  }
+  46% {
+    /* State 4: Towering slender pillar floating tall in the left-center */
+    width: 150px;
+    height: 390px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(clamp(-720px, -50vw, -440px), 5px, 0);
+  }
+  60% {
+    /* State 5: Low wide foundation plinth sweeping across bottom */
+    width: 380px;
+    height: 200px;
+    top: 250px;
+    right: 0;
+    transform: translate3d(clamp(-500px, -36vw, -300px), 40px, 0);
+  }
+  74%, 80% {
+    /* State 6: Designated Momentary Overlap Phase - Crosses photo lower-right corner cleanly */
+    width: 210px;
+    height: 240px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(-35px, 15px, 0);
+  }
+  88% {
+    /* State 7: Slender form sliding smoothly back toward right flank - photo fully clear */
+    width: 150px;
+    height: 380px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(25px, 5px, 0);
+  }
+  96%, 100% {
+    /* State 8: Home resting position */
+    width: 150px;
+    height: 380px;
+    top: 210px;
+    right: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 16. blur log Smooth Infinite Waterfall Scrolling (Continuous Flow) */
+@keyframes blurStreamUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-360px);
+  }
+}
+
+@keyframes blurStreamDown {
+  0% {
+    transform: translateY(-360px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ticker-up {
+  animation: blurStreamUp 1.25s linear infinite;
+}
+
+.ticker-down {
+  animation: blurStreamDown 1.25s linear infinite;
+}
+
+.col-1 .ticker-up {
+  animation-duration: 1.2s;
+}
+
+.col-2 .ticker-down {
+  animation-duration: 1.35s;
+}
+
+.col-3 .ticker-up {
+  animation-duration: 1.15s;
+}
+
+.col-4 .ticker-down {
+  animation-duration: 1.3s;
+}
+
+
+
+/* ==========================================================================
+   Section 2: Concept Manifesto (Directly Recreating Attachment 2)
+   ========================================================================== */
+.manifesto-section {
+  position: relative;
+  min-height: 95vh;
+  padding: 120px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  overflow: hidden;
+  z-index: 2;
+}
+
+
+
+/* Page Index "1" in the top-left (From Attachment 2) */
+.page-number-giant {
+  position: absolute;
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(24px, 3.5vw, 48px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 11vw, 9.5rem);
+  line-height: 1;
+  color: var(--text-ghost);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Watermark "熟考クラブ" in Concept Section (Anchored Top-Right & Bottom-Left as in Attachment 2) */
+.manifesto-bg-watermark-top {
+  position: absolute;
+  top: clamp(36px, 4vw, 55px);
+  right: clamp(30px, 4vw, 65px);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.manifesto-bg-watermark-bottom {
+  position: absolute;
+  bottom: clamp(20px, 3.5vw, 40px);
+  left: clamp(30px, 4vw, 60px);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.manifesto-bg-watermark-top .svg-watermark-full {
+  height: clamp(50px, 8vw, 85px);
+  width: auto;
+  display: block;
+  opacity: 0.16;
+  transition: opacity var(--transition-normal);
+}
+
+.manifesto-bg-watermark-bottom .svg-watermark-full {
+  height: clamp(65px, 11vw, 130px);
+  width: auto;
+  display: block;
+  opacity: 0.15;
+  transition: opacity var(--transition-normal);
+}
+
+.manifesto-section:hover .svg-watermark-full {
+  opacity: 0.28;
+}
+
+.header-jukukou-club-svg {
+  height: 14px;
+  width: auto;
+  display: block;
+  opacity: 0.55;
+}
+
+.manifesto-content-box {
+  max-width: 720px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  padding: 40px 24px;
+}
+
+.manifesto-brand-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.manifesto-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 48px;
+  color: var(--text-primary);
+}
+
+.manifesto-paragraphs {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 2.2;
+  color: var(--text-primary);
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.manifesto-paragraphs p {
+  letter-spacing: 0.06em;
+}
+
+.manifesto-callout {
+  font-family: var(--font-japanese);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-top: 16px;
+}
+
+
+
+/* Interactive Thought Meter */
+.thought-depth-meter {
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.thought-meter-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.thought-meter-status {
+  font-family: var(--font-japanese);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.depth-slider-input {
+  width: 280px;
+  accent-color: var(--accent-orange);
+  cursor: var(--cursor-pointer);
+}
+
+/* ==========================================================================
+   Section 3: Product Index Table of Contents (Attachment 3)
+   ========================================================================== */
+.index-section {
+  position: relative;
+  padding: 140px 32px 100px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.index-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.index-page-number {
+  position: absolute;
+  bottom: clamp(10px, 2.5vw, 30px);
+  right: clamp(24px, 4vw, 55px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(6rem, 15vw, 13rem);
+  line-height: 1;
+  color: var(--text-ghost);
+  user-select: none;
+  pointer-events: none;
+}
+
+.index-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+  text-transform: uppercase;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.toc-item {
+  position: relative;
+}
+
+.toc-link {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: fit-content;
+  font-family: var(--font-morisawa);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+  border-bottom: none;
+  padding-bottom: 0;
+  transition: all var(--transition-fast);
+}
+
+.toc-link:hover {
+  color: var(--accent-orange);
+  text-decoration-color: var(--accent-orange);
+  transform: translateX(8px);
+}
+
+.toc-product-name {
+  font-family: var(--font-morisawa);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.toc-product-kanji {
+  font-family: var(--font-morisawa);
+  font-weight: 400;
+  margin-left: 0;
+  color: inherit;
+}
+
+.toc-link:hover .toc-product-kanji {
+  color: var(--accent-orange);
+}
+
+.toc-dots {
+  flex-grow: 1;
+  margin: 0 16px;
+  border-bottom: 1px dotted var(--text-muted);
+  transform: translateY(-4px);
+}
+
+.toc-page-target {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Section 4: Product Showcase & Interactive Experiment Gallery
+   ========================================================================== */
+.catalog-section {
+  position: relative;
+  padding: 80px 32px 140px;
+  z-index: 2;
+}
+
+.catalog-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.catalog-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 72px;
+  border-bottom: 2px solid var(--border-dark);
+  padding-bottom: 20px;
+}
+
+.catalog-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.catalog-meta-info {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Single Product Section Layout (Replicating Attachment 4's Underlined Header & Watermark Number) */
+.product-card-block {
+  position: relative;
+  margin-bottom: 140px;
+  padding: 60px 48px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.product-card-block:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.product-bg-number {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(7rem, 16vw, 14rem);
+  line-height: 0.8;
+  color: var(--text-ghost);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Product Header (Underlined title as in Attachment 4) */
+.product-block-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
+.product-underlined-title {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.product-underlined-title span {
+  font-family: var(--font-japanese);
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.product-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-gap: 48px;
+  position: relative;
+  z-index: 2;
+  align-items: start;
+}
+
+/* Product Image Gallery / 4-Photo Slider */
+.product-visual-stage {
+  position: relative;
+  width: 100%;
+}
+
+.product-slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  user-select: none;
+}
+
+.slider-viewport:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.slider-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.slider-caption-chip {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFF;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  pointer-events: none;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slider-counter {
+  display: none !important;
+}
+
+.slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 56px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-pointer);
+  z-index: 4;
+  transition: opacity var(--transition-fast);
+  padding: 0;
+  outline: none;
+}
+
+.slider-nav-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--text-primary);
+  stroke-width: 2.2;
+}
+
+.slider-nav-btn.prev {
+  left: 8px;
+}
+
+.slider-nav-btn.next {
+  right: 8px;
+}
+
+.slider-nav-btn:hover {
+  background: transparent;
+  color: var(--text-primary);
+  opacity: 0.5;
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+.slider-nav-btn:active {
+  transform: translateY(-50%);
+  opacity: 0.35;
+}
+
+/* Thumbnails Strip */
+.slider-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.slider-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  border: none;
+  background: var(--bg-secondary);
+  cursor: var(--cursor-pointer);
+  padding: 0;
+  opacity: 0.45;
+  transition: opacity 0.22s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.slider-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.slider-thumb .thumb-index,
+.thumb-index {
+  display: none !important;
+}
+
+.slider-thumb:hover {
+  opacity: 0.75;
+}
+
+.slider-thumb.active {
+  opacity: 1;
+  border: none;
+  box-shadow: none;
+}
+
+/* All Products (01-04: shape shift memo, think layer, blur log, task progress sheet) - custom aspect-ratio matching user's photo attachments (1024:683) */
+#slider-prod-01 .slider-viewport,
+#slider-prod-02 .slider-viewport,
+#slider-prod-03 .slider-viewport,
+#slider-prod-04 .slider-viewport {
+  aspect-ratio: 1024 / 683;
+}
+
+#slider-prod-01 .slider-thumb,
+#slider-prod-02 .slider-thumb,
+#slider-prod-03 .slider-thumb,
+#slider-prod-04 .slider-thumb {
+  aspect-ratio: 1024 / 683;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  animation: pulseAnimation 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseAnimation {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* Product Content & Purchasing Information */
+.product-info-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-meta-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.meta-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+}
+
+.product-catchphrase {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.product-description-text {
+  font-family: var(--font-japanese);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.product-specs-table {
+  width: 100%;
+  margin-bottom: 28px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+}
+
+.product-specs-table tr {
+  border-bottom: none;
+}
+
+.product-specs-table th {
+  text-align: left;
+  padding: 6px 16px 6px 0;
+  color: #000000;
+  width: 36%;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.product-specs-table td {
+  padding: 6px 0;
+  color: var(--text-primary);
+}
+
+.product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-feature-settings: 'palt';
+}
+
+.price-currency {
+  font-family: var(--font-morisawa);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.price-amount {
+  font-family: var(--font-morisawa);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1;
+}
+
+.price-tax,
+.price-tax-note {
+  font-family: var(--font-morisawa);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.product-cta-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.add-cart-btn-primary {
+  flex-grow: 1;
+  padding: 14px 24px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+}
+
+.add-cart-btn-primary:hover {
+  background: var(--accent-orange);
+  color: #FFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 85, 17, 0.3);
+}
+
+.header-concept-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.interactive-try-btn {
+  flex-grow: 1;
+  padding: 14px 24px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: var(--radius-sm);
+  cursor: var(--cursor-pointer);
+  transition: all var(--transition-fast);
+}
+
+.interactive-try-btn:hover {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: #FFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 85, 17, 0.25);
+}
+
+.bundle-exhibit-badge {
+  display: inline-block;
+  padding: 14px 20px;
+  background: rgba(255, 85, 17, 0.08);
+  border: 1px dashed var(--accent-orange);
+  border-radius: var(--radius-sm);
+  color: var(--accent-orange);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* Mini Interactive Sandbox Inside Product Card */
+.product-interactive-sandbox {
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--bg-primary);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-sm);
+  display: none;
+}
+
+.product-interactive-sandbox.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sandbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.sandbox-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-orange);
+}
+
+.sandbox-reset-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: var(--cursor-pointer);
+}
+
+.sandbox-reset-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Sandbox Canvas Elements */
+.canvas-interactive-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #FFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+
+
+.canvas-hint-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Layer Depth Slider Demo */
+.layer-depth-demo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.depth-visual-preview {
+  height: 140px;
+  position: relative;
+  background: #FFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+.contour-ring {
+  position: absolute;
+  border: 2px solid rgba(20, 20, 20, 0.25);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+
+.contour-core {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-orange);
+  border-radius: 50% 40% 60% 50%;
+  box-shadow: 0 0 20px rgba(255, 85, 17, 0.4);
+}
+
+.layer-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.layer-slider-controls input {
+  flex-grow: 1;
+  accent-color: var(--accent-orange);
+}
+
+.layer-depth-indicator {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 90px;
+}
+
+/* Progress Sheet Task Interactive Checklist */
+.task-sheet-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.task-demo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #FFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  cursor: var(--cursor-pointer);
+  transition: background var(--transition-fast);
+}
+
+
+
+.task-demo-row:hover {
+  border-color: var(--accent-green);
+}
+
+.task-checkbox-custom {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.task-demo-row.checked .task-checkbox-custom {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #FFF;
+}
+
+.task-label-text {
+  flex-grow: 1;
+}
+
+.task-demo-row.checked .task-label-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-stage-badge {
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  background: rgba(91, 181, 47, 0.15);
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Section 5: Special Edition / Ponder Box Bundle
+   ========================================================================== */
+.bundle-box-section {
+  position: relative;
+  margin: 60px 0 140px;
+  background: #121212;
+  color: #F8F7F4;
+  border-radius: var(--radius-sm);
+  padding: 80px 48px;
+  overflow: hidden;
+}
+
+.bundle-box-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bundle-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.bundle-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.bundle-description {
+  font-family: var(--font-japanese);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #B0B0AA;
+  margin-bottom: 32px;
+}
+
+.bundle-includes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.bundle-includes-list li {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bundle-check {
+  color: var(--accent-green);
+}
+
+.bundle-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.bundle-price-original {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #777;
+  text-decoration: line-through;
+}
+
+.bundle-price-current {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFF;
+}
+
+.bundle-cta-btn {
+  padding: 18px 36px;
+  background: var(--accent-orange);
+  color: #FFF;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.bundle-cta-btn:hover {
+  background: #FFF;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+.bundle-visual-side {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bundle-box-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.bundle-mockup-inner {
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.bundle-edition-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.bundle-box-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.bundle-box-sub {
+  font-family: var(--font-japanese);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ==========================================================================
+   Section 6: Journal & Editorial ("考えること"の記録)
+   ========================================================================== */
+.journal-section {
+  padding: 100px 32px 140px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.journal-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.journal-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 48px;
+}
+
+.journal-main-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+}
+
+.journal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 32px 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+  cursor: var(--cursor-pointer);
+}
+
+.journal-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.journal-meta-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.journal-article-title {
+  font-family: var(--font-japanese);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.journal-excerpt {
+  font-family: var(--font-japanese);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.journal-read-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Section 7: Footer & Brand Signature
+   ========================================================================== */
+.site-footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  padding: 80px 32px 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 48px;
+  margin-bottom: 64px;
+}
+
+.footer-brand-summary h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.footer-brand-summary p {
+  font-family: var(--font-japanese);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-list a {
+  font-size: 0.85rem;
+  font-family: var(--font-japanese);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-list a:hover {
+  color: var(--accent-orange);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Cart Drawer Modal
+   ========================================================================== */
+.cart-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0; right: -480px; bottom: 0;
+  width: 100%;
+  max-width: 460px;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-lg);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transition: right var(--transition-smooth);
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-drawer-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cart-close-btn {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.cart-close-btn:hover {
+  color: var(--accent-orange);
+}
+
+.cart-items-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-empty-state {
+  margin: auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-japanese);
+  font-size: 0.95rem;
+}
+
+.cart-item-row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  grid-gap: 16px;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cart-item-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-secondary);
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-item-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.cart-item-sub {
+  font-family: var(--font-japanese);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.cart-item-price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.qty-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.qty-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  width: 20px;
+  text-align: center;
+}
+
+.cart-drawer-footer {
+  padding: 24px 28px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.cart-summary-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.cart-total-label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.cart-total-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+.checkout-action-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-orange);
+  color: #FFF;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.checkout-action-btn:hover {
+  background: var(--accent-orange-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Checkout Modal / Order Confirmation
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  padding: 36px 32px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-smooth);
+}
+
+.modal-backdrop.open .modal-dialog-box {
+  transform: translateY(0);
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 1.4rem;
+  cursor: var(--cursor-pointer);
+  color: var(--text-secondary);
+}
+
+.checkout-form-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.checkout-form-sub {
+  font-family: var(--font-japanese);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.form-field-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-orange);
+}
+
+.form-row-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+/* Order Success State */
+.order-success-card {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.success-symbol {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: rgba(91, 181, 47, 0.15);
+  color: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.success-order-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.success-message-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+.toast-notice {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #141414;
+  color: #FFF;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: all var(--transition-smooth);
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 860px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-gap: 60px;
+  }
+
+  .hero-visual-composition {
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .hero-green-block {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: -30px;
+    width: 100%;
+    max-width: 460px;
+    height: 140px;
+    animation: none;
+  }
+
+  .product-main-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+  }
+
+  .bundle-box-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .manifesto-section {
+    padding: 80px 20px;
+  }
+
+  .page-number-giant {
+    top: 20px;
+    left: 20px;
+  }
+
+  .manifesto-bg-watermark-top {
+    left: 120px;
+  }
+
+  .product-card-block {
+    padding: 36px 20px;
+    margin-bottom: 80px;
+  }
+
+  .product-bg-number {
+    font-size: 5rem;
+    bottom: 12px;
+    right: 16px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-drawer {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   PONDER CLUB Vector SVG Logo (Direct from User's Vector PDF)
+   ========================================================================== */
+.brand-logo-svg {
+  height: 20px;
+  width: auto;
+  max-width: 170px;
+  display: block;
+}
+
+.hero-logo-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.manifesto-logo-svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+
+.tagline-logo-svg {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin-top: 4px;
+}
+
+.bundle-box-logo-svg {
+  width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+
+.footer-logo-svg {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.checkout-logo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.checkout-logo-svg {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   CSS 3D Polyhedron / Drum Roll Kinetic Typographic System
+   X-Axis Horizontal Prism Rotation (Exact size, Staggered PONDER & CLUB Reels)
+/* ==========================================================================
+   Kinetic 3D Drum Roll Typography - Letter-by-Letter Authentic Vector Logo
+   Horizontal X-Axis Prism Rotation with Staggered Cascade Motion
+   ========================================================================== */
+
+.drum-logo-row {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  line-height: 1;
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  --drum-h: 1.35em;
+  --drum-r: calc(var(--drum-h) / 2);
+  user-select: none;
+}
+
+.drum-word {
+  display: inline-flex;
+  align-items: center;
+}
+
+.drum-space {
+  display: inline-block;
+  width: 0.58em;
+}
+
+.drum-char {
+  display: inline-block;
+  position: relative;
+  height: var(--drum-h);
+  perspective: 2200px;
+  perspective-origin: 50% 50%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Safe margin for letters P and C so their outer curves never get clipped */
+.reel-p,
+.reel-c {
+  padding-left: 0.04em;
+  margin-left: -0.04em;
+}
+
+.drum-char-cylinder {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 50% 50% 0;
+  will-change: transform;
+  animation: letterDrumRoll 7.2s cubic-bezier(0.68, 0, 0.32, 1) infinite;
+}
+
+.drum-char-sizer {
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
+  height: var(--drum-h);
+}
+
+.drum-char-sizer svg,
+.drum-char-face svg {
+  height: 100%;
+  width: auto;
+  display: block;
+  color: var(--text-primary);
+}
+
+.drum-char-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--bg-primary);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+/* 4-sided horizontal prism geometry */
+.face-1 { transform: rotateX(0deg) translateZ(var(--drum-r)); }
+.face-2 { transform: rotateX(90deg) translateZ(var(--drum-r)); }
+.face-3 { transform: rotateX(180deg) translateZ(var(--drum-r)); }
+.face-4 { transform: rotateX(270deg) translateZ(var(--drum-r)); }
+
+/* Sequential Stagger per Letter:
+   P -> O -> N -> D -> E -> R -> [gap] -> C -> L -> U -> B */
+.drum-idx-0 .drum-char-cylinder { animation-delay: 0.00s; }
+.drum-idx-1 .drum-char-cylinder { animation-delay: 0.07s; }
+.drum-idx-2 .drum-char-cylinder { animation-delay: 0.14s; }
+.drum-idx-3 .drum-char-cylinder { animation-delay: 0.21s; }
+.drum-idx-4 .drum-char-cylinder { animation-delay: 0.28s; }
+.drum-idx-5 .drum-char-cylinder { animation-delay: 0.35s; }
+
+.drum-idx-6 .drum-char-cylinder { animation-delay: 0.48s; }
+.drum-idx-7 .drum-char-cylinder { animation-delay: 0.55s; }
+.drum-idx-8 .drum-char-cylinder { animation-delay: 0.62s; }
+.drum-idx-9 .drum-char-cylinder { animation-delay: 0.69s; }
+
+/* 3D Drum Roll Rotation with Periodic Hold (Constant Size, No Expansion) */
+@keyframes letterDrumRoll {
+  0%, 16% {
+    transform: rotateX(0deg);
+    animation-timing-function: cubic-bezier(0.68, 0, 0.32, 1);
+  }
+  25%, 41% {
+    transform: rotateX(-90deg);
+    animation-timing-function: cubic-bezier(0.68, 0, 0.32, 1);
+  }
+  50%, 66% {
+    transform: rotateX(-180deg);
+    animation-timing-function: cubic-bezier(0.68, 0, 0.32, 1);
+  }
+  75%, 91% {
+    transform: rotateX(-270deg);
+    animation-timing-function: cubic-bezier(0.68, 0, 0.32, 1);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+
+/* ==========================================================================
+   Rotating Brand Custom Cursor
+   ========================================================================== */
+.brand-custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999999;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.brand-custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.brand-cursor-scale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-custom-cursor.is-pressed .brand-cursor-scale {
+  transform: scale(0.85);
+}
+
+.brand-cursor-spinner {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  animation: cursorSpin 2.4s linear infinite;
+  will-change: transform;
+}
+
+.brand-cursor-spinner svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+@keyframes cursorSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .brand-custom-cursor {
+    display: none !important;
+  }
+}
+
+

@@ -1,0 +1,12 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local Python helper scripts
+*.py
+
+# Antigravity IDE
+.init
+.gemini/
